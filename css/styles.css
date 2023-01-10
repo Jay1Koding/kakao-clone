@@ -3,6 +3,7 @@
 
 /* Components */
 @import 'components/status-bar.css';
+@import 'components/nav-bar.css';
 
 /* Screens */
 @import 'screens/login.css';
@@ -15,11 +16,13 @@
   --font-color-white: #fff;
   --font-color-grey: #949494;
   --bg-dark: #0f0f0f;
+  --bg-dark-darker: #181818;
   --bg-dark-lighter: #202124;
   --bg-dark-lightest: #2f2f2f;
   --border-radius: 10px;
   --border-color-dark-blue: #3e607b;
   --margin: 4px;
+  --border-color: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 *,
@@ -33,4 +36,49 @@ body {
   /* background-color: black; */
   background-color: var(--bg-dark);
   color: var(--font-color-white);
+}
+
+.nav-bar {
+  border-top: var(--border-color);
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--bg-dark-darker);
+}
+
+.nav__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  padding: 20px 0;
+}
+
+.nav__btn {
+  position: relative;
+}
+
+.nav__notification {
+  background-color: tomato;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__notification--dot {
+  background-color: red;
+  display: block;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  border-radius: 50%;
 }
